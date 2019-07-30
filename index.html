@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-us">
+​
+
+<head>
+    <title>Train Time</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+​
+
+<body class="container">
+    <div class="row">
+        <div class="jumbotron col-md-12">
+            <h1 class="display-4">Current Train Schedule</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card col-md-12 px-0 mb-3">
+            <div class="card-header">
+                Current Trains
+            </div>
+            <div class="card-body" id="trainTimeTable">
+                ​<table class="col-md-12">
+                    <thead>
+                        <tr>
+                            <th scope="col">Train Name</th>
+                            <th scope="col">Detination</th>
+                            <th scope="col">Frequency(min)</th>
+                            <th scope="col">Next Arrival</th>
+                            <th scope="col">Minutes Away</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card col-md-12 px-0">
+            <div class="card-header">
+                New train entry
+            </div>
+            <form class="needs-validation" novalidate>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="trainName">Train Name</label>
+                        <input type="text" class="form-control" id="trainName" placeholder="Train Name" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="trainDestination">Train Destination</label>
+                        <input type="text" class="form-control" id="trainDestination" placeholder="Train Destination"
+                            required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="firstTrainTime">First Train Time</label>
+                        <input type="time" class="form-control" id="firstTrainTime" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid time.
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="trainFrequency">Frequency(min)</label>
+                        <input type="number" class="form-control" id="trainFrequency" placeholder="time" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid frequency.
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <button class="btn btn-primary" type="submit">Submit form</button>
+            </form>
+        </div>
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+        <script src="./assets/JS/moment.js"></script>
+        <script src="./assets/JS/Train_Scheduler.js"></script>
+</body>
+​
+
+</html>
